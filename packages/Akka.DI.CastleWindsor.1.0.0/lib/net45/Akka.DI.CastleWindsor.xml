@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Akka.DI.CastleWindsor</name>
+    </assembly>
+    <members>
+        <member name="T:Akka.DI.CastleWindsor.WindsorDependencyResolver">
+            <summary>
+            Provide services to ActorSystem Extension system used to create Actor
+            using the CastleWindsor IOC Container to handle wiring up dependencies to
+            Actors
+            </summary>
+        </member>
+        <member name="M:Akka.DI.CastleWindsor.WindsorDependencyResolver.#ctor(Castle.Windsor.IWindsorContainer,Akka.Actor.ActorSystem)">
+            <summary>
+            WindsorDependencyResolver Constructor
+            </summary>
+            <param name="container">Instance of the WindsorContainer</param>
+            <param name="system">Instance of the ActorSystem</param>
+        </member>
+        <member name="M:Akka.DI.CastleWindsor.WindsorDependencyResolver.GetType(System.String)">
+            <summary>
+            Returns the Type for the Actor Type specified in the actorName
+            </summary>
+            <param name="actorName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Akka.DI.CastleWindsor.WindsorDependencyResolver.CreateActorFactory(System.String)">
+            <summary>
+            Creates a delegate factory based on the actorName
+            </summary>
+            <param name="actorName">Name of the ActorType</param>
+            <returns>factory delegate</returns>
+        </member>
+        <member name="M:Akka.DI.CastleWindsor.WindsorDependencyResolver.Create``1">
+            <summary>
+            Used Register the Configuration for the ActorType specified in TActor
+            </summary>
+            <typeparam name="TActor">Tye of Actor that needs to be created</typeparam>
+            <returns>Props configuration instance</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Akka.DI.CastleWindsor.WindsorDependencyResolver.Release(Akka.Actor.ActorBase)" -->
+    </members>
+</doc>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Akka.DI.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Akka.DI.Core.DIActorProducer">
+            <summary>
+            Dependency Injection Backed IndirectActorProducer
+            </summary>
+        </member>
+        <member name="M:Akka.DI.Core.DIActorProducer.Produce">
+            <summary>
+            Creates an instance of the Actor based on the Type specified in the constructor parameter actorName
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Akka.DI.Core.DIActorProducer.Release(Akka.Actor.ActorBase)" -->
+        <member name="P:Akka.DI.Core.DIActorProducer.ActorType">
+            <summary>
+            The System.Type of the Actor specified in the constructor parameter actorName
+            </summary>
+        </member>
+        <member name="T:Akka.DI.Core.DIExt">
+            <summary>
+            Dependency Injection Extension used by the Actor System to Create the Prop configuration of DIActorProducer
+            </summary>
+        </member>
+        <member name="M:Akka.DI.Core.DIExt.Initialize(Akka.DI.Core.IDependencyResolver)">
+            <summary>
+            Used to initialize the DIExtensionProvider
+            </summary>
+            <param name="dependencyResolver"></param>
+        </member>
+        <member name="T:Akka.DI.Core.DIExtension">
+            <summary>
+            ExtensionIdProvider for the DIExt. Used to Create an instance of DIExt which implements IExtension
+            </summary>
+        </member>
+        <member name="T:Akka.DI.Core.Extensions">
+            <summary>
+            Extension methods used to simplify working with the Akka.DI.Core
+            </summary>
+        </member>
+        <member name="M:Akka.DI.Core.Extensions.AddDependencyResolver(Akka.Actor.ActorSystem,Akka.DI.Core.IDependencyResolver)">
+            <summary>
+            Method used to register the IDependencyResolver to the ActorSystem
+            </summary>
+            <param name="system">Instance of the ActorSystem</param>
+            <param name="dependencyResolver">Concrete Instance of IDependencyResolver i.e. Akka.DI.AutoFac.AutoFacDependencyResolver</param>
+        </member>
+        <member name="T:Akka.DI.Core.IDependencyResolver">
+            <summary>
+            Contract used provide services to ActorSystem Extension system used to create
+            Actors
+            </summary>
+        </member>
+        <member name="M:Akka.DI.Core.IDependencyResolver.GetType(System.String)">
+            <summary>
+            Returns the Type for the Actor Type specified in the actorName
+            </summary>
+            <param name="actorName"></param>
+            <returns>Type of the Actor specified in the actorName</returns>
+        </member>
+        <member name="M:Akka.DI.Core.IDependencyResolver.CreateActorFactory(System.String)">
+            <summary>
+            Creates a delegate factory based on the actorName
+            </summary>
+            <param name="actorName">Name of the ActorType</param>
+            <returns>factory delegate</returns>
+        </member>
+        <member name="M:Akka.DI.Core.IDependencyResolver.Create``1">
+            <summary>
+            Used Register the Configuration for the ActorType specified in TActor
+            </summary>
+            <typeparam name="TActor"></typeparam>
+            <returns>Props configuration instance</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Akka.DI.Core.IDependencyResolver.Release(Akka.Actor.ActorBase)" -->
+    </members>
+</doc>
